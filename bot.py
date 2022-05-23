@@ -21,7 +21,7 @@ bot = Bot(token=TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot)
 
 ###USE YOUR ROTATING PROXY### NEED HQ PROXIES ELSE WONT WORK UPDATE THIS FILED
-r = requests.get('https://www.google.com/search?q=m4aesaoyjvgf1at2rtin&rlz=1C1RXQR_enIN996IN996&oq=m4aesaoyjvgf1at2rtin&aqs=chrome..69i57j69i60.11065j0j4&sourceid=chrome&ie=UTF-8')
+r = requests.get('https://api.proxyscrape.com/v2/account/datacenter_shared/proxy-list?auth=m4aesaoyjvgf1at2rtin&type=getproxies&country[]=all&protocol=http&format=normal&status=all')
 res = r.partition('\n')[0]
 proxy = {"http": f"http://{res}"}
 session = requests.session()
