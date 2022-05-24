@@ -12,6 +12,7 @@ ENV = bool(os.environ.get('ENV', True))
 TOKEN = os.environ.get("TOKEN", None)
 BLACKLISTED = os.environ.get("BLACKLISTED", None) 
 KEY = os.environ.get("SKKEY", None)
+PREFIX = "!/"
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -109,7 +110,7 @@ async def binio(message: types.Message):
 <b>BIN INFO</b>
 <code>{k.get_text()[62:]}</code>
 CheckedBy: <a href="tg://user?id={message.from_user.id}">{message.from_user.first_name}</a>
-<b>Bot:</b> @BinnerRoBoT
+<b>Bot:</b> @strikermarket
 ╘═════════
 """
     await message.reply(INFO)
@@ -191,7 +192,7 @@ async def ch(message: types.Message):
       "use_stripe_sdk": "true",
       "webauthn_uvpa_available": "true",
       "spc_eligible": "false",
-      "key": "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
+      "key": SKKEY,
       "client_secret": client
     }
     
