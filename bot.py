@@ -22,12 +22,15 @@ bot = Bot(token=TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot)
 
 ###USE YOUR ROTATING PROXY### NEED HQ PROXIES ELSE WONT WORK UPDATE THIS FILED
-r = requests.get('http://kwnszuaa-rotate:nbv7p37iwa7t@p.webshare.io:80/" https://ipv4.webshare.io/').text
-res = r.partition('\n')[0]
-proxy = {"http": f"http://{res}"}
-session = requests.session()
+requests.get(
+    "https://ipv4.webshare.io/",
+    proxies={
+        "http": "http://kwnszuaa-rotate:nbv7p37iwa7t@p.webshare.io:80/",
+        "https": "http://kwnszuaa-rotate:nbv7p37iwa7t@p.webshare.io:80/"
+    }
+).text
 
-session.proxies = proxy #UNCOMMENT IT AFTER PROXIES
+session.proxies = proxies #UNCOMMENT IT AFTER PROXIES
 
 #random str GEN FOR EMAIL
 N = 10
