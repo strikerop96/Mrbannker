@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 ENV = bool(os.environ.get('ENV', True))
 TOKEN = os.environ.get("TOKEN", None)
 BLACKLISTED = os.environ.get("BLACKLISTED", None) 
-KEY = os.environ.get("SKKEY", None)
+SKKEY = os.environ.get("SKKEY", None)
 PREFIX = "!/"
 
 # Configure logging
@@ -192,7 +192,7 @@ async def ch(message: types.Message):
       "use_stripe_sdk": "true",
       "webauthn_uvpa_available": "true",
       "spc_eligible": "false",
-      "key": KEY,
+      "key": SKKEY,
       "client_secret": client
     }
     
