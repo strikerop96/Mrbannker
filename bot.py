@@ -24,7 +24,7 @@ dp = Dispatcher(bot)
 ###USE YOUR ROTATING PROXY### NEED HQ PROXIES ELSE WONT WORK UPDATE THIS FILED
 requests.get(
     "https://ipv4.webshare.io/",
-    proxies={
+    proxies ={
         "http": "http://kwnszuaa-rotate:nbv7p37iwa7t@p.webshare.io:80/",
         "https": "http://kwnszuaa-rotate:nbv7p37iwa7t@p.webshare.io:80/"
     }
