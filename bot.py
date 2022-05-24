@@ -21,7 +21,7 @@ bot = Bot(token=TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot)
 
 ###USE YOUR ROTATING PROXY### NEED HQ PROXIES ELSE WONT WORK UPDATE THIS FILED
-r = requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all')
+r = requests.get('https://api.proxyscrape.com/v2/account/datacenter_shared/proxy-list?auth=m4aesaoyjvgf1at2rtin&type=getproxies&country[]=all&protocol=http&format=normal&status=all').text
 res = r.partition('\n')[0]
 proxy = {"http": f"http://{res}"}
 session = requests.session()
@@ -191,7 +191,7 @@ async def ch(message: types.Message):
       "use_stripe_sdk": "true",
       "webauthn_uvpa_available": "true",
       "spc_eligible": "false",
-      "key": "pk_live_51JsqyASAeCNUzqVt8Bo4DclRkQ60Kz4V5jD7L9xWfwbumYoo39ILJMnZD4Fr813wDkarrYZdsZczw016Rfq1vbWp00shSSfSqM",
+      "key": "pk_live_Nlfxy49RuJeHqF1XOAtUPUXg00fH7wpfXs",
       "client_secret": client
     }
     
