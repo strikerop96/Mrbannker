@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 ENV = bool(os.environ.get('ENV', True))
 TOKEN = os.environ.get("TOKEN", None)
 BLACKLISTED = os.environ.get("BLACKLISTED", None) 
-PREFIX = "!/"
+KEY = os.environ.get("SKKEY", None)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
