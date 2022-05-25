@@ -29,8 +29,11 @@ requests.get(
         "https": "http://kwnszuaa-rotate:nbv7p37iwa7t@p.webshare.io:80/"
     }
 ).text
+res = r.partition('\n')[0]
+proxy = {"http": f"http://{res}"}
+session = requests.session()
 
-session.proxies = proxies #UNCOMMENT IT AFTER PROXIES
+session.proxies = proxy #UNCOMMENT IT AFTER PROXIES
 
 #random str GEN FOR EMAIL
 N = 10
