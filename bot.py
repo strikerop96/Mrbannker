@@ -205,7 +205,7 @@ async def ch(message: types.Message):
       "Accept-Language": "en-US,en;q=0.9"
     }
     
-    rx = session.post(f"https://api.stripe.com/v1/payment_intents/{pi}/confirm",
+    rx = session.post(f"https://api.stripe.com/v1/payment_intents/{pi}confirm",
                      data=load, headers=header)
     res = rx.json()
     msg = res["error"]["message"]
@@ -215,6 +215,15 @@ async def ch(message: types.Message):
 ✅<b>CC</b>➟ <code>{cc}</code>
 <b>STATUS</b>➟ #ApprovedCCN
 <b>MSG</b>➟ {msg}
+<b>TOOK:</b> <code>{toc - tic:0.4f}</code>(s)
+<b>CHKBY</b>➟ <a href="tg://user?id={message.from_user.id}">{message.from_user.first_name}</a>
+""")
+    elif "Unrecognized request URL" in rx.text:
+        await message.reply("[UPDATE] PROXIES ERROR")
+    elif rx.status_code == 200:
+        await message.reply(f"""
+✔️<b>CC</b>➟ <code>{cc}</code>
+<b>STATUS</b>➟ #ApprovedCVV
 <b>TOOK:</b> <code>{toc - tic:0.4f}</code>(s)
 <b>CHKBY</b>➟ <a href="tg://user?id={message.from_user.id}">{message.from_user.first_name}</a>
 """)
