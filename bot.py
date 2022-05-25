@@ -223,9 +223,7 @@ async def ch(message: types.Message):
 <b>MSG</b>➟ {msg}
 <b>TOOK:</b> <code>{toc - tic:0.4f}</code>(s)
 <b>CHKBY</b>➟ <a href="tg://user?id={message.from_user.id}">{message.from_user.first_name}</a>
-""")
-    elif "Unrecognized request URL" in rx.text:
-        await message.reply("[UPDATE] PROXIES ERROR")
+""")  
     elif rx.status_code == 200:
         await message.reply(f"""
 ✔️<b>CC</b>➟ <code>{cc}</code>
