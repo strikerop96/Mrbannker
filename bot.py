@@ -22,7 +22,7 @@ bot = Bot(token=TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot)
 
 ###USE YOUR ROTATING PROXY### NEED HQ PROXIES ELSE WONT WORK UPDATE THIS FILED
-requests.get(
+r = requests.get(
     "https://ipv4.webshare.io/",
     proxies={
         "http": "http://kwnszuaa-rotate:nbv7p37iwa7t@p.webshare.io:80/",
