@@ -22,13 +22,7 @@ bot = Bot(token=TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot)
 
 ###USE YOUR ROTATING PROXY### NEED HQ PROXIES ELSE WONT WORK UPDATE THIS FILED
-r = requests.get(
-    "https://ipv4.webshare.io/",
-    proxies={
-        "http": "http://kwnszuaa-rotate:nbv7p37iwa7t@p.webshare.io:80/",
-        "https": "http://kwnszuaa-rotate:nbv7p37iwa7t@p.webshare.io:80/"
-    }
-).text
+r = requests.get('https://proxy.webshare.io/proxy/list/download/e04e9e48faa19bc4c2eae9d068fdefd4462f293c/-/socks/username/direct/').text
 res = r.partition('\n')[0]
 proxy = {"http": f"http://{res}"}
 session = requests.session()
